@@ -1,0 +1,16 @@
+{
+ "products" : [
+     { 
+      "product_id" : 1,
+      "product_name": "widget 1",
+      "desc" : "this is desc 1",
+      "price": 12.50
+     },
+     { 
+      "product_id" : 2,
+      "product_name": "widget 2",
+      "desc" : "this is desc 2",
+      "price": 15.50
+     }
+]
+}
