@@ -18,7 +18,7 @@ nav{
     background-color: rgb(106, 130, 136);
 }
 #dropdownText{
-    margin-left: 2em;
+    margin-left: 0.5em;
 }
 #navStyles{
     color: rgb(22, 43, 75);
@@ -29,7 +29,25 @@ nav{
 #loginlogout{
     color: rgb(22, 43, 75);
 }
-
+aside{
+    margin-right: 65%;
+    margin-left: 2em;
+    border-style: solid;
+    border-width: 3px;
+    border-color:  rgb(22, 43, 75);
+    background-color: rgb(106, 130, 136);
+}
+aside .card{
+    font-size: 0.7em;
+}
+.card{
+    background-color: white;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    color:rgb(22, 43, 75);
+    font-family: "Papyrus";
+    font-weight: bold;
+}
 #checkoutStyle{
     background-color:transparent;
     border-style:hidden
