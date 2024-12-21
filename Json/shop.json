@@ -1,17 +1,150 @@
 {
-    "products" : 
+
+    "products" :
     [
+  
         { 
-            "product_id" : 1,
-            "product_name": "widget 1",
-            "desc" : "this is desc 1",
-            "price": 12.50
+          "product" :
+          {
+            "productId" : "1",
+            "title" : "Womens Tea Shirt",
+            "price" : "12.50",
+            "image" :
+              {
+                "img1" : "Images/wGreenShirt1.jpg",
+                "img2" :"Images/wGreenShirt2.jpg",
+                "img3" :"Images/wGreenShirt3.jpg"
+              }
+          }
+        },
+  
+        { 
+          "product" :
+          {
+            "productId" : "2",
+            "title" : "Womens Blue Shirt",
+            "price" : "9.99",
+            "image" :
+              {
+                "img1" : "Images/wBlueShirt1.jpg",
+                "img2" :"Images/wBlueShirt2.jpg",
+                "img3" :"Images/wBlueShirt3.jpg"
+              }
+          }
+        },
+  
+        { 
+          "product" :
+          {
+            "productId" : "3",
+            "title" : "Womens Red Shirt",
+            "price" : "14.99",
+            "image" : 
+            
+              {
+                "img1" : "Images/wRedShirt1.png",
+                "img2" :"Images/wRedShirt2.png",
+                "img3" :"Images/wRedShirt3.png"
+              }
+          }
+  
+        },
+  
+        { 
+          "product" :
+          {
+            "productId" : "4",
+            "title" : "Mens Green Shirt",
+            "price" : "16.50",
+            "image" : 
+              
+                {
+                  "img1" : "Images/mGreenShirt1.jpg",
+                  "img2" :"Images/mGreenShirt2.jpg",
+                  "img3" :"Images/mGreenShirt3.png"
+                }
+          }
+  
+              
+        },
+  
+        { 
+          "product" :
+          {
+            "productId" : "5",
+            "title" : "Mens Red Shirt",
+            "price" : "18.99",
+            "image" : 
+                {
+                  "img1" : "Images/mRedShirt1.jpg",
+                  "img2" :"Images/mRedShirt2.jpg",
+                  "img3" :"Images/mRedShirt3.jpg"
+                }
+          }
+  
         },
         { 
-            "product_id" : 2,
-            "product_name": "widget 2",
-            "desc" : "this is desc 2",
-            "price": 15.50
+          "product" :
+          {
+            "productId" : "6",
+            "title" : "Mens Blue Shirt",
+            "price" : "16.80",
+            "image" : 
+              
+                {
+                  "img1" : "Images/mBlueShirt1.png",
+                  "img2" : "Images/mBlueShirt2.jpg",
+                  "img3" : "Images/mBlueShirt3.jpg"
+                }
+          }
+  
+        },
+        { 
+          "product" :
+          {
+            "productId" : "7",
+            "title" : "Black Jeans",
+            "price" : "29.99",
+            "image" : 
+              
+                {
+                  "img1" : "Images/jeans1.jpg",
+                  "img2" : "Images/jeans2.jpg",
+                  "img3" : "Images/jeans3.jpg"
+                }
+          }
+        },
+        { 
+  
+          "product" :
+          {
+            "productId" : "8",
+            "title" : "Blue Jeans",
+            "price" : "19.99",
+            "image" : 
+              
+                {
+                  "img1" : "Images/blueJeans1.jpg",
+                  "img2" : "Images/blueJeans2.jpg",
+                  "img3" : "Images/blueJeans3.jpg"
+                }
+          }
+        },
+        { 
+          "product" :
+          {
+            "productId" : "9",
+            "title" : "Shoes",
+            "price" : "49.99",
+            "image" : 
+              
+                {
+                  "img1" : "Images/shoe.jpg",
+                  "img2" : "Images/shoe2.jpg",
+                  "img3" : "Images/shoe3.jpg"
+                }
+          }
+  
         }
     ]
            

@@ -6,7 +6,7 @@ const allProductIdsSaved = JSON.parse(localStorage.getItem('allProductId')) || [
 //     console.log(element);
 // });
 
-
+console.log(allProductIdsSaved.length);
 
 
 
@@ -22,9 +22,9 @@ const products =
       "price" : "12.50",
       "image" :
         {
-          "img1" : "Images/wGreenShirt1.jpg",
-          "img2" :"Images/wGreenShirt2.jpg",
-          "img3" :"Images/wGreenShirt3.jpg",
+          "img1" : "wGreenShirt1.jpg",
+          "img2" :"wGreenShirt2.jpg",
+          "img3" :"wGreenShirt3.jpg"
         }
     }
   },
@@ -37,9 +37,9 @@ const products =
       "price" : "9.99",
       "image" :
         {
-          "img1" : "Images/wBlueShirt1.jpg",
-          "img2" :"Images/wBlueShirt2.jpg",
-          "img3" :"Images/wBlueShirt3.jpg",
+          "img1" : "wBlueShirt1.jpg",
+          "img2" :"wBlueShirt2.jpg",
+          "img3" :"wBlueShirt3.jpg"
         }
     }
   },
@@ -53,9 +53,9 @@ const products =
       "image" : 
       
         {
-          "img1" : "Images/wRedShirt1.png",
-          "img2" :"Images/wRedShirt2.png",
-          "img3" :"Images/wRedShirt3.png"
+          "img1" : "wRedShirt1.png",
+          "img2" :"wRedShirt2.png",
+          "img3" :"wRedShirt3.png"
         }
     }
 
@@ -70,9 +70,9 @@ const products =
       "image" : 
         
           {
-            "img1" : "Images/mGreenShirt1.jpg",
-            "img2" :"Images/mGreenShirt2.jpg",
-            "img3" :"Images/mGreenShirt3.png"
+            "img1" : "mGreenShirt1.jpg",
+            "img2" :"mGreenShirt2.jpg",
+            "img3" :"mGreenShirt3.png"
           }
     }
 
@@ -88,9 +88,9 @@ const products =
       "image" : 
         
           {
-            "img1" : "Images/mRedShirt1.jpg",
-            "img2" :"Images/mRedShirt2.jpg",
-            "img3" :"Images/mRedShirt3.jpg"
+            "img1" : "mRedShirt1.jpg",
+            "img2" :"mRedShirt2.jpg",
+            "img3" :"mRedShirt3.jpg"
           }
     }
 
@@ -104,9 +104,9 @@ const products =
       "image" : 
         
           {
-            "img1" : "Images/mBlueShirt1.png",
-            "img2" : "Images/mBlueShirt2.jpg",
-            "img3" : "Images/mBlueShirt3.jpg"
+            "img1" : "mBlueShirt1.png",
+            "img2" : "mBlueShirt2.jpg",
+            "img3" : "mBlueShirt3.jpg"
           }
     }
 
@@ -120,9 +120,9 @@ const products =
       "image" : 
         
           {
-            "img1" : "Images/jeans1.jpg",
-            "img2" : "Images/jeans2.jpg",
-            "img3" : "Images/jeans3.jpg"
+            "img1" : "jeans1.jpg",
+            "img2" : "jeans2.jpg",
+            "img3" : "jeans3.jpg"
           }
     }
   },
@@ -136,9 +136,9 @@ const products =
       "image" : 
         
           {
-            "img1" : "Images/blueJeans1.jpg",
-            "img2" : "Images/blueJeans2.jpg",
-            "img3" : "Images/blueJeans3.jpg"
+            "img1" : "blueJeans1.jpg",
+            "img2" : "blueJeans2.jpg",
+            "img3" : "blueJeans3.jpg"
           }
     }
   },
@@ -151,13 +151,13 @@ const products =
       "image" : 
         
           {
-            "img1" : "Images/shoe.jpg",
-            "img2" : "Images/shoe2.jpg",
-            "img3" : "Images/shoe3.jpg"
+            "img1" : "shoe.jpg",
+            "img2" : "shoe2.jpg",
+            "img3" : "shoe3.jpg"
           }
     }
 
-  },
+  }
 ]
 
 const contentDiv = document.getElementsByClassName('row')[0];
@@ -201,22 +201,23 @@ function CartDisplay()
       {
               
         reoccuringids.push(id);
-          
+        
         const card = `
-
           <div class="col-md-12">
             <div class="card">
-              <div id="carouselExample-${dataInformation.product.productId}" class="carousel slide">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <div id="carouselExample-${dataInformation.product.productId}" class="carousel slide">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                   
-                    <img src="${dataInformation.product.image.img1}" class="d-block w-100" alt="${dataInformation.product.title}">
+                    <img src="Images/${dataInformation.product.image.img1}" class="img-fluid rounded-start" alt="${dataInformation.product.title}">
                   </div>
                   <div class="carousel-item">
-                    <img src="${dataInformation.product.image.img2}" class="d-block w-100" alt="${dataInformation.product.title}">
+                    <img src="Images/${dataInformation.product.image.img2}" class="img-fluid rounded-start" alt="${dataInformation.product.title}">
                   </div>
                   <div class="carousel-item">
-                    <img src="${dataInformation.product.image.img3}" class="d-block w-100" alt="${dataInformation.product.title}">
+                    <img src="Images/${dataInformation.product.image.img3}" class="img-fluid rounded-start" alt="${dataInformation.product.title}">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-${dataInformation.product.productId}" data-bs-slide="prev">
@@ -228,7 +229,8 @@ function CartDisplay()
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-              
+              </div>
+              <div class="col-md-8">
               <div class="card-body">
                 <p class="card-text" id="price-${id}">Price: ${formattedAmount}</p>
                 <h5 class="card-title">${dataInformation.product.title}</h5>
@@ -241,6 +243,7 @@ function CartDisplay()
                 
                 
                 <button id="plusBtn" class="btn" onclick="addItemToCart(${id})">+</button></center>
+              </div>
               </div>
             </div>
           </div>
@@ -262,10 +265,15 @@ function CartDisplay()
     checkOutPrice += price;
   });
   //console.log(checkOutPrice);
-  const cartValue = document.getElementById('cartValue');
+  //const cartValue = document.getElementById('cartValue');
   
-  
-  cartValue.innerHTML =  `Total Price: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(checkOutPrice)}`;
+  const section = document.getElementsByTagName('section')[0];
+
+  const cartValue =  `
+      <button><h2>Complete Order</h2></button>
+      <p>${allProductIdsSaved.length} item(s) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(checkOutPrice)}</p> 
+      `;
+  section.innerHTML = cartValue;
 }
 CartDisplay()
 
