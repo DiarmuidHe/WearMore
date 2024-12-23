@@ -45,7 +45,15 @@ function ProductInformation()
             "img1" : "wGreenShirt1.jpg",
             "img2" :"wGreenShirt2.jpg",
             "img3" :"wGreenShirt3.jpg"
-          }
+          },
+        "description" :
+        {
+          "Gender" : "Women",
+          "colour" : "Tea",
+          "type" : "Shirt",
+          "fabric" : "Silk",
+          "brand" : "Wear More"
+        }
       }
     },
   
@@ -60,6 +68,14 @@ function ProductInformation()
             "img1" : "wBlueShirt1.jpg",
             "img2" :"wBlueShirt2.jpg",
             "img3" :"wBlueShirt3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Women",
+            "colour" : "Blue",
+            "type" : "Shirt",
+            "fabric" : "Silk",
+            "brand" : "Wear More"
           }
       }
     },
@@ -73,9 +89,17 @@ function ProductInformation()
         "image" : 
         
           {
-            "img1" : "wRedShirt1.png",
-            "img2" :"wRedShirt2.png",
-            "img3" :"wRedShirt3.png"
+            "img1" :"wRedShirt1.jpg",
+            "img2" :"wRedShirt2.jpg",
+            "img3" :"wRedShirt3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Women",
+            "colour" : "Red",
+            "type" : "Shirt",
+            "fabric" : "Silk",
+            "brand" : "Wear More"
           }
       }
   
@@ -92,7 +116,15 @@ function ProductInformation()
             {
               "img1" : "mGreenShirt1.jpg",
               "img2" :"mGreenShirt2.jpg",
-              "img3" :"mGreenShirt3.png"
+              "img3" :"mGreenShirt3.jpg"
+            },
+            "description" :
+            {
+              "Gender" : "Male",
+              "colour" : "Green",
+              "type" : "Shirt",
+              "fabric" : "Silk",
+              "brand" : "Wear More"
             }
       }
   
@@ -111,6 +143,14 @@ function ProductInformation()
               "img1" : "mRedShirt1.jpg",
               "img2" :"mRedShirt2.jpg",
               "img3" :"mRedShirt3.jpg"
+            },
+            "description" :
+            {
+              "Gender" : "Male",
+              "colour" : "Red",
+              "type" : "Shirt",
+              "fabric" : "Silk",
+              "brand" : "Wear More"
             }
       }
   
@@ -124,9 +164,17 @@ function ProductInformation()
         "image" : 
           
             {
-              "img1" : "mBlueShirt1.png",
+              "img1" : "mBlueShirt1.jpg",
               "img2" : "mBlueShirt2.jpg",
               "img3" : "mBlueShirt3.jpg"
+            },
+            "description" :
+            {
+              "Gender" : "Male",
+              "colour" : "Blue",
+              "type" : "Shirt",
+              "fabric" : "Silk",
+              "brand" : "Wear More"
             }
       }
   
@@ -143,6 +191,14 @@ function ProductInformation()
               "img1" : "jeans1.jpg",
               "img2" : "jeans2.jpg",
               "img3" : "jeans3.jpg"
+            },
+            "description" :
+            {
+              "Gender" : "Unisex",
+              "colour" : "Black",
+              "type" : "Jeans",
+              "fabric" : "Denim",
+              "brand" : "Wear More"
             }
       }
     },
@@ -159,6 +215,14 @@ function ProductInformation()
               "img1" : "blueJeans1.jpg",
               "img2" : "blueJeans2.jpg",
               "img3" : "blueJeans3.jpg"
+            },
+            "description" :
+            {
+              "Gender" : "Unisex",
+              "colour" : "Blue",
+              "type" : "Jeans",
+              "fabric" : "Denim",
+              "brand" : "Wear More"
             }
       }
     },
@@ -174,6 +238,14 @@ function ProductInformation()
               "img1" : "shoe.jpg",
               "img2" : "shoe2.jpg",
               "img3" : "shoe3.jpg"
+            },
+            "description" :
+            {
+              "Gender" : "Unisex",
+              "colour" : "Black",
+              "type" : "Shoes",
+              "fabric" : "Leather",
+              "brand" : "Wear More"
             }
       }
   
@@ -181,9 +253,7 @@ function ProductInformation()
   ]
 
   const contentDiv = document.getElementsByClassName('row')[0];
-  var counter = 0;
   products.forEach(dataInformation => {
-    counter++;
       const card = `
 
         <div class="col-md-4">

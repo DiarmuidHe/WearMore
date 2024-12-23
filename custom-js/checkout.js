@@ -1,14 +1,12 @@
-// checkout.js
-
-//localStorage.setItem('allProductIds','');
 const allProductIdsSaved = JSON.parse(localStorage.getItem('allProductId')) || [];
-// allProductIdsSaved.forEach(element => {
-//     console.log(element);
-// });
-
-console.log(allProductIdsSaved.length);
 
 
+function AboutProduct(id)
+{
+  localStorage.getItem('aboutId');
+  localStorage.setItem('aboutId', id);
+
+}
 
 
 const products = 
@@ -25,7 +23,15 @@ const products =
           "img1" : "wGreenShirt1.jpg",
           "img2" :"wGreenShirt2.jpg",
           "img3" :"wGreenShirt3.jpg"
-        }
+        },
+      "description" :
+      {
+        "Gender" : "Women",
+        "colour" : "Tea",
+        "type" : "Shirt",
+        "fabric" : "Silk",
+        "brand" : "Wear More"
+      }
     }
   },
 
@@ -40,6 +46,14 @@ const products =
           "img1" : "wBlueShirt1.jpg",
           "img2" :"wBlueShirt2.jpg",
           "img3" :"wBlueShirt3.jpg"
+        },
+        "description" :
+        {
+          "Gender" : "Women",
+          "colour" : "Blue",
+          "type" : "Shirt",
+          "fabric" : "Silk",
+          "brand" : "Wear More"
         }
     }
   },
@@ -53,9 +67,17 @@ const products =
       "image" : 
       
         {
-          "img1" : "wRedShirt1.png",
-          "img2" :"wRedShirt2.png",
-          "img3" :"wRedShirt3.png"
+          "img1" :"wRedShirt1.jpg",
+          "img2" :"wRedShirt2.jpg",
+          "img3" :"wRedShirt3.jpg"
+        },
+        "description" :
+        {
+          "Gender" : "Women",
+          "colour" : "Red",
+          "type" : "Shirt",
+          "fabric" : "Silk",
+          "brand" : "Wear More"
         }
     }
 
@@ -72,7 +94,15 @@ const products =
           {
             "img1" : "mGreenShirt1.jpg",
             "img2" :"mGreenShirt2.jpg",
-            "img3" :"mGreenShirt3.png"
+            "img3" :"mGreenShirt3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Male",
+            "colour" : "Green",
+            "type" : "Shirt",
+            "fabric" : "Silk",
+            "brand" : "Wear More"
           }
     }
 
@@ -91,6 +121,14 @@ const products =
             "img1" : "mRedShirt1.jpg",
             "img2" :"mRedShirt2.jpg",
             "img3" :"mRedShirt3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Male",
+            "colour" : "Red",
+            "type" : "Shirt",
+            "fabric" : "Silk",
+            "brand" : "Wear More"
           }
     }
 
@@ -104,9 +142,17 @@ const products =
       "image" : 
         
           {
-            "img1" : "mBlueShirt1.png",
+            "img1" : "mBlueShirt1.jpg",
             "img2" : "mBlueShirt2.jpg",
             "img3" : "mBlueShirt3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Male",
+            "colour" : "Blue",
+            "type" : "Shirt",
+            "fabric" : "Silk",
+            "brand" : "Wear More"
           }
     }
 
@@ -123,6 +169,14 @@ const products =
             "img1" : "jeans1.jpg",
             "img2" : "jeans2.jpg",
             "img3" : "jeans3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Unisex",
+            "colour" : "Black",
+            "type" : "Jeans",
+            "fabric" : "Denim",
+            "brand" : "Wear More"
           }
     }
   },
@@ -139,6 +193,14 @@ const products =
             "img1" : "blueJeans1.jpg",
             "img2" : "blueJeans2.jpg",
             "img3" : "blueJeans3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Unisex",
+            "colour" : "Blue",
+            "type" : "Jeans",
+            "fabric" : "Denim",
+            "brand" : "Wear More"
           }
     }
   },
@@ -154,6 +216,14 @@ const products =
             "img1" : "shoe.jpg",
             "img2" : "shoe2.jpg",
             "img3" : "shoe3.jpg"
+          },
+          "description" :
+          {
+            "Gender" : "Unisex",
+            "colour" : "Black",
+            "type" : "Shoes",
+            "fabric" : "Leather",
+            "brand" : "Wear More"
           }
     }
 
@@ -234,7 +304,8 @@ function CartDisplay()
               <div class="card-body">
                 <p class="card-text" id="price-${id}">Price: ${formattedAmount}</p>
                 <h5 class="card-title">${dataInformation.product.title}</h5>
-                <center>
+                <button class="btn" onclick="AboutProduct(${dataInformation.product.productId})"><a href="about.html">About</a></button>
+                <br>
                 <button id="minusBtn" class="btn" onclick="minusItemFromCart(${id})">-</button>
       
                 
@@ -242,7 +313,7 @@ function CartDisplay()
                 <span id="item-amount-${id}" class="fs-4 px-4">${count}</span>
                 
                 
-                <button id="plusBtn" class="btn" onclick="addItemToCart(${id})">+</button></center>
+                <button id="plusBtn" class="btn" onclick="addItemToCart(${id})">+</button>
               </div>
               </div>
             </div>
