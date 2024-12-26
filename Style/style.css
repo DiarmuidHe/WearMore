@@ -81,6 +81,7 @@ article
         grid-template-columns: 70% 30%;
     }
 }
+
 @media only screen and (max-width: 767px) 
 {
     aside{

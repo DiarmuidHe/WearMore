@@ -11,12 +11,43 @@ if (localStorage.getItem('checkout') == null ) {
    
 }
 var checkout=localStorage.getItem('checkout');
-document.querySelector('#checkout').innerHTML=checkout;
+document.querySelector('#checkout').innerHTML = checkout;
 
 // run to update login/
 var logout = document.getElementById('loginlogout');
 // add a listener for add to cart if such a button id is pressed
 logout.addEventListener("click", Logout);
+
+//localStorage.removeItem('allCustomers');
+console.log(JSON.parse(localStorage.getItem('allCustomers')));
+if (localStorage.getItem('allCustomers') == null)
+{
+    //2005-01-28
+    const defaultRegisterData = 
+    [
+        {
+            
+            "FirstName": "Walter",
+            "LastName": "Mitty",
+            "LocationData":
+            {
+                "AddressLine1": "Buenos Ayres Drive",
+                "AddressLine2": "Strandhill",
+                "Eircode": "F91 23FR",
+                "City": "Sligo",
+                "County": "Sligo"
+            },
+            "DOB": "2005-01-28",
+            "EmailAddress": "wmitty@email.com",
+            "Password": "Password1",
+            "ProductsInCart" : null,
+            "CardDetails" : null
+            
+        }
+    ];
+    localStorage.setItem('allCustomers', JSON.stringify(defaultRegisterData));
+}
+
 
 function Logout() {
     // if user is logged in them log them out and redirect to home page
@@ -52,7 +83,4 @@ function checkLoginStatus() {
     } 
 
 }
-
-
-
 
