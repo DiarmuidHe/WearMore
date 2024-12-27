@@ -2,8 +2,6 @@
 var loginStatus = document.getElementById('user-login');
 // add a listener for add to cart if such a button id is pressed
 loginStatus.addEventListener("submit", loginUser);
-const customersRegisterd = JSON.parse(localStorage.getItem('allCustomers')) || [];
-
 
 function loginUser(event) {
     event.preventDefault();

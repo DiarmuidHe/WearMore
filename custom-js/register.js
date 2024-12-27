@@ -2,7 +2,9 @@ const registerStatus = document.getElementById('user-register');
 const existingEmail = document.getElementById('existingEmail');
 //localStorage.setItem('allCustomers', null);
 registerStatus.addEventListener("submit", RegisterUser);
-const customersRegisterd = JSON.parse(localStorage.getItem('allCustomers')) || [];
+
+
+
 function RegisterUser(event) {
     event.preventDefault(); 
 
@@ -34,8 +36,8 @@ function RegisterUser(event) {
             "DOB": dob,
             "EmailAddress": email,
             "Password": password,
-            "ProductsInCart" : null,
-            "CardDetails" : null
+            "ProductsInCart" : "null",
+            "CardDetails" : "null"
         }
     ];
 
