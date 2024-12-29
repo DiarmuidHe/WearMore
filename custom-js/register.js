@@ -67,7 +67,7 @@ function RegisterUser(event) {
         //localStorage.getItem(`currentUser`);
         localStorage.setItem(`currentUser`, newRegisterData[0].EmailAddress);
         localStorage.setItem('loggedIn',1);    
-        window.location.href = "shop.html"; 
+        window.location.href = "index.html"; 
     }
     
 

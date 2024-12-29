@@ -233,7 +233,7 @@ const customersRegisterd = JSON.parse(localStorage.getItem('allCustomers')) || [
 var logout = document.getElementById('loginlogout');
 logout.addEventListener("click", Logout);
 checkLoginStatus();
-matchCartWithUser();
+//matchCartWithUser();
 //const customersRegisterd = JSON.parse(localStorage.getItem('allCustomers'))
 
 if (localStorage.getItem('checkout') == null ) {  
@@ -299,8 +299,8 @@ function Logout() {
     // if user is logged in them log them out and redirect to home page
     var loggedin=localStorage.getItem('loggedIn'); 
     if (loggedin==1) {
-        localStorage.setItem('loggedIn',0);
-        window.location.href = "home.html";
+      localStorage.setItem('loggedIn',0);
+      window.location.href = "home.html";
     } 
     else {
         window.location.href = "login.html";
@@ -318,7 +318,7 @@ function checkLoginStatus() {
     if (loggedin==1) 
     {
         // change the text from Login to Logout
-        document.querySelector('#loginlogout').innerHTML="Logout";
+        document.querySelector('#loginlogout').innerHTML = "Logout";
         element.classList.remove("d-none");        
         element.classList.add("d-show");      
         customersRegisterd.forEach(customer => {
@@ -331,7 +331,7 @@ function checkLoginStatus() {
         });
     } 
     else{
-        matchCartWithUser();
+        
         // use add to hide the display of User Details
         localStorage.setItem("allProductId" ,JSON.stringify(null));
         localStorage.setItem("currentUser",JSON.stringify(null));

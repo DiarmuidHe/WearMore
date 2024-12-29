@@ -7,10 +7,17 @@ ProductInformation()
 
 function addToCart(itemNumber) 
 {
+  //on first refresh after login the allProductIdsSaved is set to null..********
+
+  
+  console.log(allProductIdsSaved)
   allProductIdsSaved.push(itemNumber); 
   //localStorage.setItem('allProductId', JSON.stringify(null));
+
+  
   localStorage.setItem('allProductId', JSON.stringify(allProductIdsSaved));
   
+  matchCartWithUser();
   var total=localStorage.getItem('checkout');
   //total = 0;
   total++;
@@ -29,9 +36,6 @@ function AboutProduct(id)
 }
 function ProductInformation()
 {
-    
-
-
   const contentDiv = document.getElementsByClassName('row')[0];
   products.forEach(dataInformation => {
       const card = `

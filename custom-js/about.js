@@ -3,7 +3,7 @@ function addToCart(itemNumber)
   allProductIdsSaved.push(itemNumber); 
   //localStorage.setItem('allProductId', JSON.stringify(null));
   localStorage.setItem('allProductId', JSON.stringify(allProductIdsSaved));
-  
+  matchCartWithUser();
   var total=localStorage.getItem('checkout');
   //total = 0;
   total++;

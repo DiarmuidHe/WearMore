@@ -26,7 +26,7 @@ function loginUser(event) {
         localStorage.setItem('loggedIn',1);   
         localStorage.setItem(`currentUser`, email);
         // redirect to shop page 
-        window.location.href = "shop.html"; 
+        window.location.href = "index.html"; 
 
     }
     else {
