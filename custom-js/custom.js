@@ -219,9 +219,10 @@ const products =
 
   }
 ]
+
 //localStorage.removeItem("allProductId");
 if(localStorage.getItem('allProductId') == null){
-    localStorage.setItem('allProductId',JSON.stringify(null))
+    localStorage.setItem('allProductId',JSON.stringify([]))
 }
 
 const currentUser = localStorage.getItem(`currentUser`);
@@ -240,7 +241,8 @@ if (localStorage.getItem('checkout') == null ) {
     localStorage.setItem('checkout',0);
    
 }
-var checkout=localStorage.getItem('checkout');
+var checkout = localStorage.getItem('checkout');
+console.log(checkout)
 document.querySelector('#checkout').innerHTML = checkout;
 
 // run to update login/
@@ -260,21 +262,27 @@ if (localStorage.getItem('allCustomers') == null)
     [
         {
             
-            "FirstName": "Walter",
-            "LastName": "Mitty",
-            "LocationData":
-            {
-                "AddressLine1": "Buenos Ayres Drive",
-                "AddressLine2": "Strandhill",
-                "Eircode": "F91 23FR",
-                "City": "Sligo",
-                "County": "Sligo"
-            },
-            "DOB": "1990-01-28",
-            "EmailAddress": "wmitty@email.com",
-            "Password": "Password1",
-            "ProductsInCart" : "null",
-            "CardDetails" : "null"
+          "FirstName": "Walter",
+          "LastName": "Mitty",
+          "LocationData":
+          {
+              "AddressLine1": "Buenos Ayres Drive",
+              "AddressLine2": "Strandhill",
+              "Eircode": "F91 23FR",
+              "City": "Sligo",
+              "County": "Sligo"
+          },
+          "DOB": "1990-01-28",
+          "EmailAddress": "wmitty@email.com",
+          "Password": "Password1",
+          "ProductsInCart" : "null",
+          "CardDetails" : 
+          {
+            "CardNumber": "1234 1234 1234 1234",
+            "CardHolder": "Walter Mitty",
+            "Expiry": "2026-01",
+            "CVV": "123",
+          }
             
         }
     ];
@@ -322,18 +330,23 @@ function checkLoginStatus() {
         element.classList.remove("d-none");        
         element.classList.add("d-show");      
         customersRegisterd.forEach(customer => {
-            if(currentUser == customer.EmailAddress)
-            {
-
-                localStorage.setItem("allProductId",JSON.stringify(customer.ProductsInCart));
-                localStorage.setItem("checkout", customer.ProductsInCart.length);
+          if(currentUser == customer.EmailAddress)
+          {
+            if(customer.ProductsInCart == "null"){
+              localStorage.setItem("checkout", 0);
             }
+            else{
+              localStorage.setItem("allProductId",JSON.stringify(customer.ProductsInCart));
+              localStorage.setItem("checkout", customer.ProductsInCart.length);
+            }
+              
+          }
         });
     } 
     else{
         
         // use add to hide the display of User Details
-        localStorage.setItem("allProductId" ,JSON.stringify(null));
+        localStorage.setItem("allProductId" ,JSON.stringify([]));
         localStorage.setItem("currentUser",JSON.stringify(null));
         localStorage.setItem('checkout',0);
         element.classList.add("d-none");        

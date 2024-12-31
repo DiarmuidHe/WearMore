@@ -10,8 +10,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="Style/style.css">
 </head>
-<body>
-<main>
+<body class="d-flex flex-column min-vh-100">
+<main class="flex-fill">
 
   <nav class="navbar navbar-expand-lg ">
     <div class="container-fluid">
@@ -23,30 +23,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav fs-3 " >
+        <ul class="navbar-nav fs-3 nav-tabs" >
           <li class="nav-item">
-            <a class="nav-link active" id="navStyles"  aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" id="navStyles"  aria-current="page" href="index.html">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navStyles" href="shop.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Shop
-            </a>
-            <ul class="dropdown-menu border border-white"  style="background-color: rgb(106, 130, 136);">
-              <li id="dropdownText"><a href="shop.html">Action</a></li>
-              <li id="dropdownText"><a href="shop.html">Another action</a></li>
-              <li id="dropdownText"><a href="shop.html">Something else here</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link"   id="navStyles" href="shop.html">Shop</a>
           </li>
-
-
           <li class="nav-item">
             <a class="nav-link"   id="userdetails" href="userdetails.html">User Details</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" id="loginlogout" href="login.html">Login</a>
           </li>
-
-
         </ul>
       </div>
       <a class="nav-link" href="cart.html">
@@ -57,139 +46,200 @@
   </nav>   
     
   
-<main>
+
 
   <h1>Checkout</h1>
 
+  <legend></legend>
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-sm col-md-6">
 
-  <legend>Delivery Details</legend>
-  <div class="col-sm col-md-4"> 
-    <form name="register" id="user-details"  method="get">
-      <div class="form-group">
-          <label for="getFirstName">First Name*</label> 
-          <input type="text" class="form-control" id="getFirstName" name="firstName" value="" pattern="^[a-zA-Z]+" title="Must contain only letters" placeholder="E.g. John, Mary, Mike, Leah" required>
-      </div>
-      <div class="form-group">
-          <label for="getLastName">Last Name*</label> 
-          <input type="text" class="form-control" id="getLastName" name="lastname" value="" pattern="^[a-zA-Z]+" title="Must contain only letters" placeholder="E.g. Smith, Brown, Miller, Jones" required>
-      </div> 
-      <div class="form-group">
-          <label for="getAddress1">Address Line 1*</label> 
-          <input type="text" class="form-control" id="getAddress1" name="address1" value="" pattern="^[a-zA-Z0-9\s]{1,30}" title="Must not contain any special characters" placeholder="E.g. 12 White St" required>
-      </div> 
-      <div class="form-group">
-      <label for="getAddress2">Address Line 2*</label> 
-      <input type="text" class="form-control" id="getAddress2" name="address2" value="" pattern="^[a-zA-Z0-9\s]{1,30}" title="Must not contain any special characters" placeholder="E.g. Town, Village, Estate" required>
-      </div> 
-      
-      <div class="form-group">
-      <label for="getEircode">Eircode*</label> 
-      <input type="text" class="form-control" id="getEircode" name="eircode" value="" pattern="^[a-zA-Z]{1}[0-9]{2}\s[a-zA-Z0-9]{4}" title="Must not contain any special characters" placeholder="E.g. G23 FQ23, Z12 35PC" required>
-      </div> 
-      <div class="form-group">
-      <label for="getCity">City*</label> 
-      <input type="text" class="form-control" id="getCity" name="city" value="" pattern="^[a-zA-Z\s]{1,30}" title="Must not contain any special characters" placeholder="E.g. Trinity College, Mullingar, Sligo" required>
-      </div> 
-      
-      <label for="countySelect" class="form-label">Select a County*</label>
-      <select class="form-select" id="countySelect"  name="countySelect" required>
-          <option value="" disabled selected>--Choose a County--</option>
-          <option value="Carlow">Carlow</option>
-          <option value="Cavan">Cavan</option>
-          <option value="Clare">Clare</option>
-          <option value="Cork">Cork</option>
-          <option value="Donegal">Donegal</option>
-          <option value="Dublin">Dublin</option>
-          <option value="Galway">Galway</option>
-          <option value="Kerry">Kerry</option>
-          <option value="Kildare">Kildare</option>
-          <option value="Kilkenny">Kilkenny</option>
-          <option value="Laois">Laois</option>
-          <option value="Leitrim">Leitrim</option>
-          <option value="Limerick">Limerick</option>
-          <option value="Longford">Longford</option>
-          <option value="Louth">Louth</option>
-          <option value="Mayo">Mayo</option>
-          <option value="Meath">Meath</option>
-          <option value="Monaghan">Monaghan</option>
-          <option value="Offaly">Offaly</option>
-          <option value="Roscommon">Roscommon</option>
-          <option value="Sligo">Sligo</option>
-          <option value="Tipperary">Tipperary</option>
-          <option value="Waterford">Waterford</option>
-          <option value="Westmeath">Westmeath</option>
-          <option value="Wexford">Wexford</option>
-          <option value="Wicklow">Wicklow</option>
-      </select>
-      
-      <div class="form-group">
-          <label for="getDOB">DOB*</label> 
-          <input type="date" class="form-control" id="getDOB" name="dateOfBirth" value="" min="1900-01-01" max="2014-12-31" required>
-      </div> 
-      <legend>Payment Details*</legend>
-      <div>
-          <input type='submit' class="btn" value="Pay">
-      </div>
-  </form>
-    
-</div>  
-</main>
-        <!-- <div> 
-          <form name="checkout" id="user-checkout" action="" method="get">
-                <fieldset>
-                    <legend>Delivery Details</legend>
-                   
-                        <label for="getFirstName">First name</label>
-                        <input type="text"  id="getFirstName" name="firstname" value="firstname" required>
-                 
-                  
-                        <label for="getLastName">Last name</label> 
-                        <input type="text" c id="getLastName" name="lastname" value="surname" required>
-                
-                   
-                        <label for="getAddress1">Addresss</label> 
-                        <input type="text"  id="getAddress1" name="address2" value="address 1" required>
-              
-                  
-                        <label for="getAddress2">Addresss</label> 
-                        <input type="text" id="getAddress2" name="address2"  value="address 2"  required>
-                   
-                  
-                        <label for="getAddress3">Addresss</label> 
-                        <input type="text"  id="getAddress3" name="address3"  value="address 3"  required>
-                
-              
-                <fieldset>
-                    <legend>Payment Details</legend>
-
-                        <label for="getCardName">Card Name</label> 
-                        <input type="text" id="cardName" name="cardname" value="MR FIRSTNAME SURNAME" required>
-             
-                        <label for="getCardNumber">Card Number</label> 
-                        <input type="text" id="cardNumber" name="cardNumber" value="1234 5678 9102 3456" required>
-                   
-                        <label for="getCardCVC">CVC</label> 
-                        <input type="password" id="cardCvv" name="cardCvv"  required>
-                </fieldset>    
-                <div id="payment-success" role="alert">
-                    Thank you for your purchase. You will receive delivery details via email. Please return to our <a href="shop.html">Shopping Page</a>.
-                </div>
-                <div  id="payment-failure" role="alert">
-                  There seems to be a problem with the card details you entered.
-                </div>                
-                <div>
-                    <input type='submit' class="btn btn-primary" id="buy-now" name="buy-now" value="Buy Now">
-
-                </div>
-            </form>
+        
+        <form name="delivery" class="row g-3 needs-validation" id="delivery-details"  method="get" novalidate>
+          <div class="col-md-6">
+              <label for="getFirstName">First Name*</label> 
+              <input type="text" class="form-control" id="getFirstName" name="firstName" value="" pattern="^[a-zA-Z]+" title="Must contain only letters" placeholder="E.g. John, Mary, Mike, Leah" required>
+          </div>
+          <div class="col-md-6">
+              <label for="getLastName">Last Name*</label> 
+              <input type="text" class="form-control" id="getLastName" name="lastname" value="" pattern="^[a-zA-Z]+" title="Must contain only letters" placeholder="E.g. Smith, Brown, Miller, Jones" required>
+          </div> 
+          <div class="form-group">
+              <label for="getAddress1">Address Line 1*</label> 
+              <input type="text" class="form-control" id="getAddress1" name="address1" value="" pattern="^[a-zA-Z0-9\s]{1,30}" title="Must not contain any special characters" placeholder="E.g. 12 White St" required>
+          </div> 
+          <div class="form-group">
+          <label for="getAddress2">Address Line 2*</label> 
+          <input type="text" class="form-control" id="getAddress2" name="address2" value="" pattern="^[a-zA-Z0-9\s]{1,30}" title="Must not contain any special characters" placeholder="E.g. Town, Village, Estate" required>
+          </div> 
           
+          <div class="form-group">
+          <label for="getEircode">Eircode*</label> 
+          <input type="text" class="form-control" id="getEircode" name="eircode" value="" pattern="^[a-zA-Z]{1}[0-9]{2}\s[a-zA-Z0-9]{4}" title="Must not contain any special characters" placeholder="E.g. G23 FQ23, Z12 35PC" required>
+          </div> 
+          <div class="form-group">
+          <label for="getCity">City*</label> 
+          <input type="text" class="form-control" id="getCity" name="city" value="" pattern="^[a-zA-Z\s]{1,30}" title="Must not contain any special characters" placeholder="E.g. Trinity College, Mullingar, Sligo" required>
+          </div> 
+          
+          <label for="countySelect" class="form-label">Select a County*</label>
+          <select class="form-select" id="countySelect"  name="countySelect" size="3" required>
+              <option value="" disabled selected>--Choose a County--</option>
+              <option value="Carlow">Carlow</option>
+              <option value="Cavan">Cavan</option>
+              <option value="Clare">Clare</option>
+              <option value="Cork">Cork</option>
+              <option value="Donegal">Donegal</option>
+              <option value="Dublin">Dublin</option>
+              <option value="Galway">Galway</option>
+              <option value="Kerry">Kerry</option>
+              <option value="Kildare">Kildare</option>
+              <option value="Kilkenny">Kilkenny</option>
+              <option value="Laois">Laois</option>
+              <option value="Leitrim">Leitrim</option>
+              <option value="Limerick">Limerick</option>
+              <option value="Longford">Longford</option>
+              <option value="Louth">Louth</option>
+              <option value="Mayo">Mayo</option>
+              <option value="Meath">Meath</option>
+              <option value="Monaghan">Monaghan</option>
+              <option value="Offaly">Offaly</option>
+              <option value="Roscommon">Roscommon</option>
+              <option value="Sligo">Sligo</option>
+              <option value="Tipperary">Tipperary</option>
+              <option value="Waterford">Waterford</option>
+              <option value="Westmeath">Westmeath</option>
+              <option value="Wexford">Wexford</option>
+              <option value="Wicklow">Wicklow</option>
+          </select>
+          
+          <div class="form-group">
+              <label for="getDOB">DOB*</label> 
+              <input type="date" class="form-control" id="getDOB" name="dateOfBirth" value="" min="1900-01-01" max="2014-12-31" required>
+          </div> 
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="save-checkbox">
+            <label class="form-check-label" for="save-checkbox">
+              <p>Save location for quicker checkout</p>
+            </label>
+          </div>
+          <div>
+              <input type='submit' class="btn" value="Confirm location">
+          </div>
+        </form>
+        
+        
+        
+        
+        
+        
+        
+        <form name="payment details" id="payment-details" class="needs-validation" method="get" novalidate>
+          
+          <div class="form-group">
+            <label for="getCardholder">Cardholder Name*</label> 
+            <input type="text" class="form-control" id="getCardholder" name="cardholder" value="" pattern="^[a-zA-Z\s]+" title="Must contain only letters" placeholder="Enter card name" required>
+            <div role="alert" id="cardholder-error"></div>
+          </div>
+          <div class="form-group">
+              <label for="getCardNumber">Card Number*</label> 
+              <input type="text" class="form-control" id="getCardNumber" name="cardNumber" value="" pattern="^[0-9]{4}[\s]{1}[0-9]{4}[\s]{1}[0-9]{4}[\s]{1}[0-9]{4}" title="Must contain only numbers and spaces" placeholder="1234 1234 1234 1234" required>
+          </div>
+          <div class="form-group">
+              <label for="getExpiry">Expiry Date*</label> 
+              <input type="month" class="form-control" id="getExpiry" name="expiryDate" value=""   min="2025-01" required>
+              <div role="alert" id="expiry-error"></div>
+          </div> 
+          <div class="form-group">
+            <label for="getCVV">CVV*</label> 
+            <input type="password" class="form-control" id="getCVV" name="CVV" value="" pattern="^[0-9]{3}" title="Only 3 digits" placeholder="XXX" required>
+            <div role="alert" id="cvv-error"></div>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="save-checkbox">
+          <label class="form-check-label" for="save-checkbox">
+            <p>Save card for quicker checkout</p>
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="T&Cs-checkbox" required>
+          <label class="form-check-label" for="T&Cs-checkbox" >
+            <p>I allow WearMore to directly charge the card for purchases.</p>
+          </label>
+        </div>
+          <div>
+              <input type='submit' class="btn" value="Confirm Payment">
+          </div>
+        </form>
+        
+        
+      </div>
+      <div class="col-sm col-md-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Item Desc</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-        </div>  -->
-  
-    
 
-    
+
+    <div class="card w-75 mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Thank You!!!</h5>
+        <p class="card-text">You purchase has been confirmed and is out for delviery. Thank you for shopping with WearMore. Return to home page ><a href="index.html">Home</a></p>
+        
+      </div>
+    </div>
+  </div>
 </main>
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-center text-md-left">
+    <div class="row">
+      <!-- Column 1 -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Company Name</h5>
+        <p>Delivering exceptional services to our clients worldwide.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Products</h5>
+        <p><a href="#" class="text-white text-decoration-none">Product 1</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Product 2</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Product 3</a></p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Useful Links</h5>
+        <p><a href="#" class="text-white text-decoration-none">Your Account</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Help</a></p>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> 1234 Main St, City, Country</p>
+        <p><i class="fas fa-envelope mr-3"></i> info@yourcompany.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +123 456 789</p>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-4">
+      <p>© 2024 Your Company. All rights reserved.</p>
+    </div>
+  </div>
+
+</footer>
 <script src="custom-js/custom.js"></script> 
 <script src="custom-js/checkout.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

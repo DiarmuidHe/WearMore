@@ -24,19 +24,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav fs-3 " >
+        <ul class="navbar-nav fs-3 nav-tabs" >
           <li class="nav-item">
-            <a class="nav-link active" id="navStyles"  aria-current="page" href="index.html">Home</a>
+            <a class="nav-link " id="navStyles"  aria-current="page" href="index.html">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navStyles" href="shop.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Shop
-            </a>
-            <ul class="dropdown-menu border border-white"  style="background-color: rgb(106, 130, 136);">
-              <li id="dropdownText"><a href="shop.html">Action</a></li>
-              <li id="dropdownText"><a href="shop.html">Another action</a></li>
-              <li id="dropdownText"><a href="shop.html">Something else here</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link"   id="navStyles" href="shop.html">Shop</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"   id="userdetails" href="userdetails.html">User Details</a>
@@ -44,8 +37,6 @@
           <li class="nav-item">
             <a  class="nav-link" id="loginlogout" href="login.html">Login</a>
           </li>
-
-
         </ul>
       </div>
       <a class="nav-link" href="cart.html">
@@ -56,14 +47,14 @@
   </nav>
     
     <h1>Register</h1>
-      <div class="col-sm col-md-4"> 
+      <div class="col-sm col-md-6"> 
           <div id="existingEmail"></div>
-          <form name="register" id="user-register"  method="get">
-              <div class="form-group">
+          <form name="register" class="row g-3 needs-validation" id="user-register"  method="get" novalidate>
+              <div class="col-md-6">
                   <label for="getFirstName">First Name*</label> 
                   <input type="text" class="form-control" id="getFirstName" name="firstName" value="" pattern="^[a-zA-Z]+" title="Must contain only letters" placeholder="E.g. John, Mary, Mike, Leah"  required>
               </div>
-              <div class="form-group">
+              <div class="col-md-6">
                   <label for="getLastName">Last Name</label> 
                   <input type="text" class="form-control" id="getLastName" name="lastname" value="" pattern="^[a-zA-Z]+" title="Must contain only letters" placeholder="E.g. Smith, Brown, Miller, Jones">
               </div> 

@@ -7,7 +7,6 @@ ProductInformation()
 
 function addToCart(itemNumber) 
 {
-  //on first refresh after login the allProductIdsSaved is set to null..********
 
   
   console.log(allProductIdsSaved)
@@ -18,7 +17,7 @@ function addToCart(itemNumber)
   localStorage.setItem('allProductId', JSON.stringify(allProductIdsSaved));
   
   matchCartWithUser();
-  var total=localStorage.getItem('checkout');
+  var total = localStorage.getItem('checkout');
   //total = 0;
   total++;
   

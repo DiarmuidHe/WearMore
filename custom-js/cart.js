@@ -7,14 +7,13 @@ function AboutProduct(id)
 
 }
 
-
-const contentDiv = document.getElementsByClassName('row')[0];
+const orderDescription = document.getElementsByTagName('tbody')[0];
+const contentDiv = document.getElementsByClassName('row')[1];
 function CartDisplay()
 {
   
   var count = 0;
   let reoccuringids = [];
-  let allPrices = [];
   idFound = false;
   products.forEach(dataInformation => 
   {
@@ -51,6 +50,7 @@ function CartDisplay()
         reoccuringids.push(id);
         
         const card = `
+        <tr>
           <div class="col-md-12">
             <div class="card">
             <div class="row g-0">
@@ -96,33 +96,18 @@ function CartDisplay()
               </div>
             </div>
           </div>
+        </tr>
         `;
-        allPrices.push(totPrice);
        contentDiv.innerHTML += card;
       }
 
       idFound = false;
       
     });
-
+    
       
   });
-  var checkOutPrice = 0;
-  //console.log(allPrices);
-  allPrices.forEach(price=> 
-  {
-    checkOutPrice += price;
-  });
-  //console.log(checkOutPrice);
-  //const cartValue = document.getElementById('cartValue');
-  
-  const section = document.getElementsByTagName('section')[0];
-
-  const cartValue =  `
-      <button><h2>Complete Order</h2></button>
-      <p>${allProductIdsSaved.length} item(s) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(checkOutPrice)}</p> 
-      `;
-  section.innerHTML = cartValue;
+  ItemsDisplay();
 }
 CartDisplay()
 
@@ -174,3 +159,81 @@ function addItemToCart(itemID)
 }
 
 
+function ItemsDisplay()
+{
+  orderDescription.innerHTML = ""
+  var count = 0;
+  let reoccuringids = [];
+  let allPrices = [];
+  let idFound = false;
+  products.forEach(dataInformation => 
+  {
+    allProductIdsSaved.forEach(id => 
+    {
+
+      count = 0;
+      allProductIdsSaved.forEach(comparisonID => 
+      {
+        if(id == comparisonID)
+        {
+          count++;
+        }
+      });
+
+        
+      var totPrice = count * dataInformation.product.price;
+      const formattedAmount = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totPrice);
+
+
+
+      for(let i = 0; i < reoccuringids.length; i++)
+      { 
+        if(reoccuringids[i] == id)
+        {
+          idFound = true;
+        }
+          
+      }
+      
+      if(id == dataInformation.product.productId && idFound == false)
+      {
+              
+        reoccuringids.push(id);
+        
+        const productInCart = `
+            <tr>
+              
+              <td>${dataInformation.product.title}</td>
+              <td>${count}</td>
+              <td>${formattedAmount}</td>
+            </tr>
+        `;
+        allPrices.push(totPrice);
+        orderDescription.innerHTML += productInCart;
+      }
+
+      idFound = false;
+      
+    });
+
+      
+  });
+  var checkOutPrice = 0;
+  //console.log(allPrices);
+  allPrices.forEach(price=> 
+  {
+    checkOutPrice += price;
+  });
+  //console.log(checkOutPrice);
+  //const cartValue = document.getElementById('cartValue');
+
+  const cartValue =  `
+    <tr>
+      
+      <td colspan="2"><b>Order Total</b></td>
+      <td scope="row"><b>${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(checkOutPrice)}</b></td>
+    </tr>
+      
+    `;
+    orderDescription.innerHTML += cartValue;
+}

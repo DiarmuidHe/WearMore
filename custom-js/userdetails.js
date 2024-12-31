@@ -1,12 +1,20 @@
 
-const editBtn = document.getElementsByClassName("btn")[0];
-const saveBtn = document.getElementsByClassName("btn")[1];
+
+    
+'use strict'
+
+
+
+const editBtn = document.getElementsByClassName("btn")[1];
+const saveBtn = document.getElementsByClassName("btn")[0];
 saveBtn.classList.add("d-none");        
 saveBtn.classList.remove("d-show");
 
 
 const userDetailsForm = document.getElementById("user-details");
-userDetailsForm.addEventListener("submit",enableEdit);
+
+
+editBtn.addEventListener("click",enableEdit);
 //localStorage.setItem('allCustomers', null);
 //registerStatus.addEventListener("submit", EditUser);
 
@@ -77,7 +85,15 @@ function enableEdit(event)
     saveBtn.classList.remove("d-none");        
     
 
-    userDetailsForm.addEventListener("submit",EditUser);
+    userDetailsForm.addEventListener("submit", (event) => {
+        if (!userDetailsForm.checkValidity()) {
+            event.preventDefault(); // Prevent form submission
+            event.stopPropagation(); // Stop propagation
+            userDetailsForm.classList.add("was-validated"); // Apply Bootstrap validation styles
+        } else {
+            EditUser(); // Call EditUser if form is valid
+        }
+    }, true ); // Ensures the listener is added only once for this edit session
     event.preventDefault(); 
 
 
