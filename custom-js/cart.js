@@ -1,11 +1,14 @@
+const container = document.getElementsByClassName('container')[0];
+const genarelAlert = document.getElementsByClassName('alert')[0];
+genarelAlert.classList.add('d-none');
+genarelAlert.classList.remove('d-show');
+const footer = document.getElementsByTagName('footer')[0];
+const main = document.getElementsByTagName('main')[0];
+const checkoutBtn = document.getElementsByClassName('btn')[0];
+checkoutBtn.addEventListener('click', () => {
+  window.location.href = "checkout.html";
+})
 
-
-function AboutProduct(id)
-{
-  localStorage.getItem('aboutId');
-  localStorage.setItem('aboutId', id);
-
-}
 
 const orderDescription = document.getElementsByTagName('tbody')[0];
 const contentDiv = document.getElementsByClassName('row')[1];
@@ -44,6 +47,7 @@ function CartDisplay()
           
       }
       
+      
       if(id == dataInformation.product.productId && idFound == false)
       {
               
@@ -52,7 +56,7 @@ function CartDisplay()
         const card = `
         <tr>
           <div class="col-md-12">
-            <div class="card">
+            <div class="card" id="horizontalCard">
             <div class="row g-0">
               <div class="col-md-4">
                 <div id="carouselExample-${dataInformation.product.productId}" class="carousel slide">
@@ -81,8 +85,8 @@ function CartDisplay()
               <div class="col-md-8">
               <div class="card-body">
                 <p class="card-text" id="price-${id}">Price: ${formattedAmount}</p>
-                <h5 class="card-title">${dataInformation.product.title}</h5>
-                <button class="btn" onclick="AboutProduct(${dataInformation.product.productId})"><a href="about.html">About</a></button>
+                <h5 class="card-title" onclick="AboutProduct(${dataInformation.product.productId})"><a href="about.html">${dataInformation.product.title}</a></h5>
+
                 <br>
                 <button id="minusBtn" class="btn" onclick="minusItemFromCart(${id})">-</button>
       
@@ -107,9 +111,15 @@ function CartDisplay()
     
       
   });
+  if(reoccuringids.length == 2){
+    main.style.marginBottom = "23em";
+  }
+  else if(reoccuringids.length == 1){
+    main.style.marginBottom = "26em";
+  }
   ItemsDisplay();
 }
-CartDisplay()
+
 
 
 function minusItemFromCart(itemID)
@@ -138,7 +148,8 @@ function minusItemFromCart(itemID)
   document.querySelector('#checkout').innerHTML=total;
 
   contentDiv.innerHTML = "";
-  CartDisplay();
+  CheckParams();
+
 }
 
 function addItemToCart(itemID)
@@ -237,3 +248,30 @@ function ItemsDisplay()
     `;
     orderDescription.innerHTML += cartValue;
 }
+
+function CheckParams(){
+  if(localStorage.getItem('loggedIn') == 0){
+    container.innerHTML = "";
+    genarelAlert.innerHTML = 'Please <a href="login.html">Log In</a> to view Cart'
+    genarelAlert.classList.remove('d-none');
+    genarelAlert.classList.add('d-show');
+    footer.style.position = "fixed";
+    footer.style.bottom = "0";
+    footer.style.left = "0";
+    footer.style.width = "100%";
+  }
+  else if(localStorage.getItem('checkout') == 0){
+    container.innerHTML = "";
+    genarelAlert.classList.remove('d-none');
+    genarelAlert.classList.add('d-show');
+    genarelAlert.innerHTML = 'Cart is empty :(. Go to the <a href="shop.html">Shop</a> to add items';
+    footer.style.position = "fixed";
+    footer.style.bottom = "0";
+    footer.style.left = "0";
+    footer.style.width = "100%";
+  }
+  else{
+    CartDisplay()
+  }
+}
+CheckParams();

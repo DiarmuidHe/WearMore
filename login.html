@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Login securely. Enter your email address and password to log in or choose to register">
+  <meta name="keywords" content="WearMore, login, register, password, email">
+  <meta name="author" content="WearMore">
   <title>Login</title>
 
   <link rel="icon" href="Images/WMICO.ico" type="image/gig" >
@@ -35,7 +36,7 @@
             <a class="nav-link"   id="userdetails" href="userdetails.html">User Details</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link active" id="loginlogout" href="login.html">Login</a>
+            <a  class="nav-link" id="loginlogout" href="login.html">Login</a>
           </li>
         </ul>
       </div>
@@ -46,33 +47,77 @@
     </div>
   </nav>
     
-    <h1>Login</h1>
-    <div>    
-        <div class="col-sm col-md-4"> 
-            <div role="alert" id="loginerror">The username or password you entered is incorrect. <a href="">Forgot your password?</a></div>    
-            <form name="login" id="user-login"  method="get">
-                <div class="form-group">
-                    <label for="emailAddressID">Email address</label>
-                    <input type="email" class="form-control" id="emailAddressID" name="email" placeholder="name@example.com" value="" required>
-                </div>
 
-                <div >
-                    <label for="passwordID">Password</label> 
-                    <input type="password" class="form-control" id="passwordID" name="password" value="password1" required>
-                </div>    
+
+    <div class="container">
+      <h2>Login</h2>
+      <div class="alert alert-warning" role="alert">
+        Incorrect Email or Password
+      </div>
+        <div class="card">
+          <div class="container">
+            <div class="col-sm col-md-12"> 
+              <form name="login" class="row g-3 needs-validation" id="user-login"  method="get" novalidate>
+                <div class="form-group">
+                  <label for="emailAddressID">Email address*</label>
+                  <input type="text" class="form-control" id="emailAddressID" name="emailRegister" placeholder="name@example.com" value="" pattern=".{1,100}(@)[a-zA-Z0-9]{1,50}(.ie|.com)" required>
+                </div>
+                <div class="form-group">
+                  <label for="passwordID">Password*</label> 
+                  <input type="password" class="form-control" id="passwordID" name="password" value="" pattern=".*[A-Z0-9].{8,}" title="Must contain a Number, 8 characters and an Upper and a Lower case letter" placeholder="E.g. Password1, heLLo234 "required>
+                </div>   
                 <div>
-                    <input type='submit' class="btn btn-primary" value="Login">
+                    <input type='submit' class="btn" value="Login">
                 </div>
             </form>
-            <p> <a href="register.html">Need to Register?</a></p>
-
-        </div> 
-    </div>   
+          </form>
+          
+          </div>
+        </div>
+        
+      </div>  
+      <p> <a href="register.html">Need to Register?</a></p>
+    </div>  
     
 
 
 
 </main>
+<footer class="pt-5 pb-4">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-3">
+        <h4>WEARMORE</h4>
+        <p>Giveing the best of everything for everyone</p>
+      </div>
+
+      <div class="col-md-2">
+        <h4>PRODUCTS</h4>
+        <p><a href="about.html" onclick="AboutProduct(1)">Womens Tea Shirt</a></p>
+        <p><a href="about.html" onclick="AboutProduct(6)">Mens Blue Shirt</a></p>
+        <p><a href="about.html" onclick="AboutProduct(8)">Blue Jeans</a></p>
+      </div>
+
+      <div class="col-md-2">
+        <h4>NAV</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="shop.html">Shop</a></p>
+      </div>
+
+      <div class="col-md-3">
+        <h4>CONTACT</h4>
+        <p>123 Fake St, Athlone, Westmeath</p>
+        <p>info@WearMore.com</p>
+        <p>+353 1 178 7488</p>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-4">
+      <p>Copyright &copy; WearMore &lt;2024&gt;</p>
+    </div>
+  </div>
+
+</footer>
 
     <script src="custom-js/custom.js"></script>   
     <script src="custom-js/login.js"></script>       

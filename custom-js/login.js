@@ -1,10 +1,28 @@
+'use strict'
+let incorrectPasswordOrEmailAlert = document.getElementsByClassName('alert')[0];
+incorrectPasswordOrEmailAlert.classList.remove('d-show');
+incorrectPasswordOrEmailAlert.classList.add('d-none');
+const main = document.getElementsByTagName('main')[0];
 
 var loginStatus = document.getElementById('user-login');
-// add a listener for add to cart if such a button id is pressed
-loginStatus.addEventListener("submit", loginUser);
 
-function loginUser(event) {
-    event.preventDefault();
+
+main.style.marginBottom = "25em";
+loginStatus.addEventListener("submit", (event) => {
+    if (!loginStatus.checkValidity()) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+        incorrectPasswordOrEmailAlert.classList.remove('d-show');
+        incorrectPasswordOrEmailAlert.classList.add('d-none');
+        loginStatus.classList.add("was-validated"); 
+    } else {
+      event.preventDefault();
+
+      loginUser();
+    }
+}, true );
+function loginUser() {
+
     
     
     var email = document.getElementById('emailAddressID').value;
@@ -29,13 +47,9 @@ function loginUser(event) {
         window.location.href = "index.html"; 
 
     }
-    else {
-        // login unsuccessful, error message appears
-        localStorage.setItem('loggedIn',0);
-        var element = document.getElementById("loginerror");
-        element.classList.remove("d-none");
-        element.classList.remove("d-block");
-        
+    else{
+        incorrectPasswordOrEmailAlert.classList.add('d-show');
+        incorrectPasswordOrEmailAlert.classList.remove('d-none');
     }
     //event.preventDefault();
     

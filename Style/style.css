@@ -1,72 +1,128 @@
-nav ul li a{
-    text-decoration: none;
-    color: rgb(22, 43, 75);
-
-    font-size: 1.7em;
-    font-family: "Papyrus";
-
-    
+.container {
+  margin-top: 2em;
 }
 
-nav a h1{
-    color: rgb(22, 43, 75);
-    font-size: 2em;
-    font-family: "Papyrus";
-
-}
-nav{
-    background-color: rgb(106, 130, 136);
-}
-#dropdownText{
-    margin-left: 0.5em;
-}
-#navStyles{
-    color: rgb(22, 43, 75);
-}
-#userdetails{
-    color: rgb(22, 43, 75);
-}
-#loginlogout{
-    color: rgb(22, 43, 75);
+#homeContainer {
+  background-color: rgb(247, 248, 250);
 }
 
-aside .card{
-    font-size: 0.7em;
-}
-.card{
-    background-color: white;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    color:rgb(22, 43, 75);
-    font-family: "Papyrus";
-    font-weight: bold;
-}
-#cart-style{
-    background-color:transparent;
-    border-style:hidden
+* {
+  font-family: "Times New Roman";
 }
 
-/* @media only screen and (min-width: 1250px){
-} */
-@media only screen and (max-width: 1249px) and (min-width: 768px){
-
-
-    .img-fluid{
-        height:12em;
-        
-    }
-    
-    
-
+nav {
+  background-color: rgb(106, 130, 136);
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(22, 43, 75);
+  font-size: 1.7em;
+}
+nav a h1 {
+  color: rgb(22, 43, 75);
+  font-size: 2em;
 }
 
-/* @media only screen and (max-width: 767px) 
-{
+footer {
+  color: rgb(22, 43, 75);
+  background-color: rgb(106, 130, 136);
+}
+footer a {
+  text-decoration: none;
+  color: rgb(22, 43, 75);
+}
+footer h4 {
+  font-weight: bold;
+}
 
+#navStyles, #userdetails, #loginlogout {
+  color: rgb(22, 43, 75);
+}
 
+aside .card {
+  font-size: 0.7em;
+}
 
-    
-}  */
+.card {
+  background-color: rgb(247, 248, 250);
+  color: rgb(22, 43, 75);
+  font-weight: bold;
+}
+.card a {
+  text-decoration: none;
+  color: rgb(22, 43, 75);
+}
+.card #addToCartBtn {
+  float: right;
+}
 
+#addToCartBtn {
+  float: right;
+  border-radius: 0.5em;
+  border: 2px solid rgb(5, 10, 18);
+  color: rgb(22, 43, 75);
+}
 
+#addToCartBtn:hover {
+  background-color: rgb(5, 10, 18);
+  color: rgb(247, 248, 250);
+}
 
+#cart-style {
+  background-color: transparent;
+  border-style: hidden;
+}
+
+form .btn {
+  color: rgb(247, 248, 250);
+  background-color: rgb(5, 10, 18);
+  box-shadow: 2px 2px 5px rgb(5, 10, 18);
+  float: right;
+}
+form .btn:hover {
+  color: rgb(247, 248, 250);
+  background-color: rgb(5, 10, 18);
+  box-shadow: 0px 0px 5px rgb(5, 10, 18);
+}
+
+.accordion {
+  border: 2px solid rgb(5, 10, 18);
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
+
+h2 {
+  color: rgb(22, 43, 75);
+  font-weight: bold;
+}
+
+#horizontalCard {
+  border: 0px;
+  border-radius: 0px;
+  border-bottom: 2px solid rgb(5, 10, 18);
+  border-top: 2px solid rgb(5, 10, 18);
+}
+
+main {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #horizontalCard .img-fluid {
+    height: 10.5em;
+  }
+  #horizontalCard .col-md-4 {
+    height: 7em;
+  }
+}
+@media (min-width: 1025px) {
+  #horizontalCard .img-fluid {
+    height: 11em;
+  }
+  #horizontalCard .col-md-4 {
+    width: 10em;
+  }
+  #horizontalCard .col-md-8 {
+    height: 10em;
+  }
+}/*# sourceMappingURL=style.css.map */

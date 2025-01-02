@@ -16,9 +16,9 @@ var eircode = document.getElementById('getEircode');
 var city = document.getElementById('getCity');
 var county = document.getElementById('countySelect');
 var dob = document.getElementById('getDOB');
-var newLocationSave = document.getElementById("save-checkbox")
+var newLocationSave = document.getElementById("save-address")
 const deliveryDetailsForm = document.getElementById("delivery-details");
-deliveryDetailsForm.addEventListener("submit", ConfirmLocation);
+//deliveryDetailsForm.addEventListener("submit", ConfirmLocation);
 
 
 
@@ -39,6 +39,7 @@ var cardholder = document.getElementById('getCardholder');
 var cardNumber = document.getElementById('getCardNumber');
 var expiry = document.getElementById('getExpiry');
 var cvv = document.getElementById('getCVV');
+var newCardSave = document.getElementById("save-card")
 const paymentDetailsForm = document.getElementById("payment-details");
 paymentDetailsForm.classList.add("d-none");
 paymentDetailsForm.classList.remove("d-show"); 
@@ -56,7 +57,7 @@ customersRegisterd.forEach(registered => {
     city.value = registered.LocationData.City;
     eircode.value = registered.LocationData.Eircode;
     county.value = registered.LocationData.County;
-    dob.value = registered.DOB
+
   }
 
 });
@@ -81,7 +82,7 @@ function ConfirmLocation()
         registered.LocationData.City  = city.value;
         registered.LocationData.Eircode = eircode.value;
         registered.LocationData.County = county.value;
-        registered.DOB = dob.value;
+
         localStorage.setItem('allCustomers', JSON.stringify(customersRegisterd));
       }
     });
@@ -100,6 +101,7 @@ function ConfirmLocation()
 
 
 function ConfirmPayment(){
+
   customersRegisterd.forEach(registered => {
     if(registered.EmailAddress == currentUser)
     {
@@ -111,7 +113,7 @@ function ConfirmPayment(){
     }
 
   });
-
+  
 
   paymentDetailsForm.addEventListener("submit", (event) => {
     if (!paymentDetailsForm.checkValidity() || ValidatePayment()) 
@@ -123,6 +125,22 @@ function ConfirmPayment(){
     else 
     {
       event.preventDefault();
+      if(newCardSave.checked)
+      {
+        customersRegisterd.forEach(registered => {
+          if(registered.EmailAddress == localStorage.getItem(`currentUser`))
+          {
+            //console.log(registered.FirstName);
+            registered.CardDetails.CardHolder = cardholder.value;
+            registered.CardDetails.CardNumber = cardNumber.value;
+            registered.CardDetails.Expiry = expiry.value;
+            
+            registered.CardDetails.CVV =  cvv.value;
+            localStorage.setItem('allCustomers', JSON.stringify(customersRegisterd));
+          }
+      
+        });
+      }
       PaymentSuccess();
     }
   }, true );

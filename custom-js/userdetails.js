@@ -26,7 +26,6 @@ var address2 = document.getElementById('getAddress2');
 var eircode = document.getElementById('getEircode');
 var city = document.getElementById('getCity');
 var county = document.getElementById('countySelect');
-var dob = document.getElementById('getDOB');
 var email = document.getElementById('emailAddressID');
 
 
@@ -43,7 +42,6 @@ function displayUserData()
             city.value = registered.LocationData.City;
             eircode.value = registered.LocationData.Eircode;
             county.value = registered.LocationData.County;
-            dob.value = registered.DOB
             email.value = registered.EmailAddress;
 
 
@@ -54,7 +52,6 @@ function displayUserData()
             city.setAttribute("disabled","disabled");
             eircode.setAttribute("disabled","disabled");
             county.setAttribute("disabled","disabled");
-            dob.setAttribute("disabled","disabled");
             email.setAttribute("disabled","disabled");
         }
         
@@ -73,7 +70,6 @@ function enableEdit(event)
     city.removeAttribute("disabled");
     eircode.removeAttribute("disabled");
     county.removeAttribute("disabled");
-    dob.removeAttribute("disabled");
     
     county.setAttribute("size","3");
 
@@ -112,7 +108,6 @@ function EditUser() {
             registered.LocationData.City  = city.value;
             registered.LocationData.Eircode = eircode.value;
             registered.LocationData.County = county.value;
-            registered.DOB = dob.value;
         }
     });
     localStorage.setItem('allCustomers', JSON.stringify(customersRegisterd));

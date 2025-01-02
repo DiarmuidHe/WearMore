@@ -1,0 +1,163 @@
+
+$default-colour1: rgb(106, 130, 136);
+$default-colour2: rgb(22, 43, 75);
+$light-color: rgb(247, 248, 250);
+$dark-color: rgb(5, 10, 18);
+$default-font: "Times New Roman";
+
+.container{
+  margin-top: 2em;
+}
+#homeContainer{
+  background-color: $light-color;
+}
+*{
+  font-family: "Times New Roman";
+}
+nav {
+    background-color: $default-colour1;
+  
+    ul {
+      li {
+
+        a {
+          text-decoration: none;
+          color: $default-colour2;
+          font-size: 1.7em;
+          
+        }
+      }
+    }
+  
+    a {
+      h1 {
+        color: $default-colour2;
+        font-size: 2em;
+        
+      }
+    }
+  }
+  footer{
+    color: $default-colour2;
+    background-color: $default-colour1;
+    a {
+      text-decoration: none;
+      color: $default-colour2;
+    }
+    h4{
+      font-weight: bold;
+    }
+  }
+
+  #navStyles, #userdetails, #loginlogout {
+    color: $default-colour2;
+  }
+  
+  aside {
+    .card {
+      font-size: 0.7em;
+    }
+  }
+  
+  .card {
+    background-color: $light-color;
+    color: $default-colour2;
+    
+    font-weight: bold;
+    a {
+      text-decoration: none;
+      color: $default-colour2;
+    }
+    #addToCartBtn{
+
+      float: right;
+      
+    }
+  }
+  #addToCartBtn{
+    float: right;
+    border-radius: 0.5em;
+    border: 2px solid $dark-color;
+    //background-color: $default-colour1;
+    color:$default-colour2;
+    
+  }
+  #addToCartBtn:hover{
+    
+    background-color: $dark-color;
+    color: $light-color;
+    
+  }
+  #cart-style {
+    background-color: transparent;
+    border-style: hidden;
+  }
+  form{
+    .btn{
+      color:$light-color;
+      background-color: $dark-color;
+      box-shadow: 2px 2px 5px $dark-color;
+      float:right;
+    }
+    .btn:hover{
+      color:$light-color;
+      background-color: $dark-color;
+      box-shadow: 0px 0px 5px $dark-color;
+      
+    }
+  }
+
+
+  .accordion{
+    border: 2px solid $dark-color;
+    margin-top: 4em;
+    margin-bottom: 3em;
+  }
+  h2{
+    color:$default-colour2;
+    font-weight: bold;
+  }
+  #horizontalCard
+  {  
+    border:0px;
+    border-radius: 0px;
+    border-bottom: 2px solid $dark-color;
+    border-top: 2px solid $dark-color;
+  }
+  main{
+    margin-bottom: 2em;
+  }
+
+// @media (max-width: 768px) {
+
+// }
+@media (min-width: 769px) and (max-width: 1024px) {
+  #horizontalCard
+  {  
+    .img-fluid {
+    height: 10.5em;
+    
+    }
+    .col-md-4{
+    height: 7em;
+    }  
+  }
+
+}
+
+@media (min-width: 1025px) {
+  #horizontalCard
+  {  
+    .img-fluid {
+      height: 11em;
+      
+    }
+    .col-md-4{
+      width: 10em;
+    }
+    .col-md-8{
+      height: 10em;
+    }
+  }
+}
+

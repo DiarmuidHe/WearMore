@@ -1,16 +1,29 @@
+const notLogInalert = document.getElementsByClassName('alert')[0];
+notLogInalert.classList.add('d-none');
+notLogInalert.classList.remove('d-show');
 function addToCart(itemNumber) 
 {
-  allProductIdsSaved.push(itemNumber); 
-  //localStorage.setItem('allProductId', JSON.stringify(null));
-  localStorage.setItem('allProductId', JSON.stringify(allProductIdsSaved));
-  matchCartWithUser();
-  var total=localStorage.getItem('checkout');
-  //total = 0;
-  total++;
+  if(localStorage.getItem('loggedIn') == 1 ){
+    console.log(allProductIdsSaved)
+    allProductIdsSaved.push(itemNumber); 
+    //localStorage.setItem('allProductId', JSON.stringify(null));
   
-
-  localStorage.setItem('checkout',total);
-  document.querySelector('#checkout').innerHTML=total;
+    
+    localStorage.setItem('allProductId', JSON.stringify(allProductIdsSaved));
+    
+    matchCartWithUser();
+    var total = localStorage.getItem('checkout');
+    //total = 0;
+    total++;
+    
+  
+    localStorage.setItem('checkout',total);
+    document.querySelector('#checkout').innerHTML=total;
+  }
+  else{
+    notLogInalert.classList.remove('d-none');
+    notLogInalert.classList.add('d-show');
+  }
 }
 
 
@@ -127,8 +140,9 @@ function AboutDisplay()
           `;
           const productAddToCart = 
            `
-              <button class="btn" onclick="addToCart(${dataInformation.product.productId})"><h2>Add to cart</h2></button>
-
+           <br>
+            <button class="btn" id="addToCartBtn" onclick="addToCart(${dataInformation.product.productId})"><h3>Add to cart</h3></button>
+            
            `;
           cartDiv.innerHTML = productAddToCart;
           productTable.innerHTML = productDescription;
@@ -169,9 +183,8 @@ function AboutDisplay()
                         
                         <div class="card-body">
                           <p class="card-text"><strong>$${dataInformation.product.price}</strong></p>
-                          <h5 class="card-title">${dataInformation.product.title}</h5>
-                          <button class="btn" onclick="AboutProduct(${dataInformation.product.productId})"><a href="about.html">About</a></button>
-                          <button class="btn" onclick="addToCart(${dataInformation.product.productId})">Add to cart</button>
+                          <h5 class="card-title" onclick="AboutProduct(${dataInformation.product.productId})"><a href="about.html">${dataInformation.product.title}</a></h5>
+                          <button class="btn" id="addToCartBtn" onclick="addToCart(${dataInformation.product.productId})">Add to cart</button>
                         </div>
                       </div>
                     </div>

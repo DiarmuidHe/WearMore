@@ -219,7 +219,12 @@ const products =
 
   }
 ]
+function AboutProduct(id)
+{
+  localStorage.getItem('aboutId');
+  localStorage.setItem('aboutId', id);
 
+}
 //localStorage.removeItem("allProductId");
 if(localStorage.getItem('allProductId') == null){
     localStorage.setItem('allProductId',JSON.stringify([]))
@@ -272,7 +277,6 @@ if (localStorage.getItem('allCustomers') == null)
               "City": "Sligo",
               "County": "Sligo"
           },
-          "DOB": "1990-01-28",
           "EmailAddress": "wmitty@email.com",
           "Password": "Password1",
           "ProductsInCart" : "null",
@@ -308,7 +312,7 @@ function Logout() {
     var loggedin=localStorage.getItem('loggedIn'); 
     if (loggedin==1) {
       localStorage.setItem('loggedIn',0);
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     } 
     else {
         window.location.href = "login.html";
